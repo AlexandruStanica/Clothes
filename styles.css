@@ -1,0 +1,260 @@
+/* Master styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Sen", sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* Nav styles */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+}
+
+.left-side {
+    display: flex;
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav-wrapper > .left-side > div {
+    margin-right: 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover {
+    color: black;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid black;
+}
+
+.active-nav-link a {
+    color: black;
+}
+/* Portfolio styles */
+
+.portfolio-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio-item-wrapper {
+    position: relative;
+}
+
+.portfolio-img-background {
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-text-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.coat {
+    padding-left: 175px;
+}
+
+.logo-wrapper img{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.img-text-wrapper .subtitle {
+    transition: 1s;
+    color: transparent;
+    font-weight: 600;
+}
+
+.img-text-wrapper:hover .subtitle {
+    font-weight: 600;
+    color: lightseagreen;
+}
+
+.img-darken {
+    transition: 1s;
+    filter: brightness(10%);
+}
+
+@media screen and (max-width: 768px){
+    .portfolio-items-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .two-column-wrapper {
+        grid-template-columns: 1fr!important;
+    }
+
+    .portfolio-img-background {
+        width: auto;
+    }
+
+    .brand img {
+        margin-left: -50px;
+    }
+
+    .nav-link-wrapper {
+        height: 30px;
+    }
+
+    .nav-wrapper {
+        padding: 0px;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+    }
+
+    .line {
+        width: 30px;
+        height: 3px;
+        background: black;
+        margin: 5px;
+    }
+
+    .left-side {
+        position: fixed;
+        background: #4774f1;
+        height: 100vh;
+        width: 100%;
+        z-index: 1;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -15%);
+        -webkit-clip-path: circle(100px at 90% -15%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .left-side.open {
+        clip-path: circle(1500px at 90% -15%);
+        -webkit-clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav-link-wrapper a {
+        color: white;
+        opacity: 0;
+    }
+
+    .nav-link-wrapper a:nth-child(1) {
+        transition: all 0.5s ease 0.4s;
+    }
+
+    .nav-link-wrapper a:nth-child(2) {
+        transition: all 0.5s ease 0.6s;
+    }
+
+    .nav-link-wrapper a.fade {
+        opacity: 1;
+    }
+
+    .active-nav-link {
+        border-bottom: none;
+    }
+}
+
+/* About page */
+.two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.profile-content-wrapper {
+    padding: 30px;
+}
+
+.profile-content-wrapper h1 {
+    color: lightseagreen;
+}
+
+.profile-image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+  }
+  
+.middle {
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+.profile-image-wrapper:hover .profile-image {
+    opacity: 0.3;
+  }
+  
+.profile-image-wrapper:hover .middle {
+    opacity: 1;
+  }
+
+.text {
+    background-color: black;
+    color: lightseagreen;
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 5px;
+  }
