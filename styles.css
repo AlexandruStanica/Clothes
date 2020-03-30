@@ -133,7 +133,7 @@ body {
     }
 
     .brand img {
-        margin-left: -50px;
+        width: 200px;
     }
 
     .nav-link-wrapper {
@@ -171,8 +171,8 @@ body {
         justify-content: space-evenly;
         align-items: center;
         flex-direction: column;
-        clip-path: circle(100px at 90% -15%);
-        -webkit-clip-path: circle(100px at 90% -15%);
+        clip-path: circle(100px at 90% -20%);
+        -webkit-clip-path: circle(100px at 90% -20%);
         transition: all 1s ease-out;
         pointer-events: none;
     }
